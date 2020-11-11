@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import items from "./data";
+// import items from "./data";
+import Client from "./Contentful";
 
 const RoomContext = React.createContext();
 // Access to provider and consumer.
@@ -24,9 +25,37 @@ class RoomProvider extends Component {
   };
   // getData
 
+  getData = async () => {
+    try {
+      let response = await Client.getEntries({
+        content_type: "airBnbRoom",
+        order: "fields.price",
+      });
+      let rooms = this.formatData(response.items);
+      let featuredRooms = rooms.filter((room) => room.featured === true);
+
+      let maxPrice = Math.max(...rooms.map((item) => item.price));
+      let maxSize = Math.max(...rooms.map((item) => item.size));
+
+      this.setState({
+        rooms,
+        featuredRooms,
+        sortedRooms: rooms,
+        loading: false,
+        //
+        price: maxPrice,
+        maxPrice: maxPrice,
+        maxSize: maxSize,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   componentDidMount() {
-    // this.getData
-    let rooms = this.formatData(items);
+    this.getData();
+    // Locally
+    /* let rooms = this.formatData(items);
     let featuredRooms = rooms.filter((room) => room.featured === true);
 
     let maxPrice = Math.max(...rooms.map((item) => item.price));
@@ -41,7 +70,7 @@ class RoomProvider extends Component {
       price: maxPrice,
       maxPrice: maxPrice,
       maxSize: maxSize,
-    });
+    }); */
   }
 
   formatData(itemsParam) {
@@ -91,7 +120,7 @@ class RoomProvider extends Component {
       tempRooms = tempRooms.filter((room) => room.capacity >= capacity);
     }
     // Filter by price
-    if (price > 0) {
+    if (price >= 0) {
       tempRooms = tempRooms.filter((room) => room.price <= price);
     }
     // Filter by size
