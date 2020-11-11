@@ -2,8 +2,8 @@
 
 ### `yarn start` OR `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Link to website: https://airbnbwebsite.netlify.app/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Resources used: Contentful (for data), React router (for page routing), Styled-components (for styling), React context API (to use context in different components), React hooks, Funcitonal components and some class based components. 
+
+<img src="./previewImg.png" alt="previewImg" width="400"/>
