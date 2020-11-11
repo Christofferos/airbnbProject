@@ -20,7 +20,7 @@ export default class Navbar extends Component {
         <div className="nav-center">
           <div className="nav-header">
             <Link to="/">
-              <img src={logo} alt="airbnbLogo" style={{ width: "150px" }}></img>
+              <img src={logo} alt="airbnbLogo" style={{ width: "150px", marginTop: "9px" }}></img>
             </Link>
             <button type="button" className="nav-btn" onClick={this.handleToggle}>
               <FaAlignRight className="nav-icon" />
