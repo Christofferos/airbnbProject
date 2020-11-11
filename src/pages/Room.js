@@ -1,7 +1,7 @@
 /* Class-based component */
 import React, { Component } from "react";
 import defaultBcg from "../images/room-1.jpeg";
-import Hero from "../components/Hero";
+// import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import { RoomContext } from "../context";
@@ -33,7 +33,7 @@ export default class Room extends Component {
         </div>
       );
     }
-    const { name, description, capacity, size, price, extras, breakfast, pets, images } = room;
+    const { name, description, capacity, size, price, extras, pets, images } = room; // breakfast left out
     const [mainImg, ...defaultImg] = images; // Rest påeratpr
 
     return (
