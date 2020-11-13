@@ -1,6 +1,7 @@
-## Available Scripts
-
+## To Get Started
+### `yarn install` OR `npm install`
 ### `yarn start` OR `npm start`
+### Add a file called `env.development` with two keys
 
 Link to website: https://airbnbwebsite.netlify.app/
 
