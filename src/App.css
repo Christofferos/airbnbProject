@@ -54,6 +54,43 @@ h6 {
   margin-bottom: 1.5em;
 }
 
+/* */
+
+.map {
+  width: 100vw;
+  height: 93.1vh;
+  position: relative;
+}
+
+.location-icon {
+  font-size: 2rem;
+  color: red;
+}
+
+.location-info {
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  width: 250px;
+  min-height: 200px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.location-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.location-info li {
+  padding: 5px 0;
+}
+
+/* */
+
 .btn-primary {
   display: inline-block;
   text-decoration: none;
@@ -135,8 +172,9 @@ h6 {
 }
 
 .show-nav {
-  height: 100px;
+  height: 155px;
 }
+
 @media screen and (min-width: 768px) {
   .nav-btn {
     display: none;
@@ -156,7 +194,21 @@ h6 {
     margin: 0 1rem;
     padding: 0.5rem 0;
   }
+
+  .location-info {
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    width: 400px;
+    min-height: 200px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+  }
 }
+
 /* end of navbar */
 /* Hero */
 .defaultHero,
